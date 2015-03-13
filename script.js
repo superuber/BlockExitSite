@@ -14,12 +14,12 @@
 	
 	function loadOptions(){
 		chrome.extension.sendRequest({method: "getLocalStorage", key: "blockExitSiteExclude"}, function(response) {
-			if(response.data!="") exclude = response.data.split("\n");
+			if(response.data!=undefined && response.data!="") exclude = response.data.split("\n");
 			excludeLoaded = true;
 		});
 		
 		chrome.extension.sendRequest({method: "getLocalStorage", key: "blockExitSiteInclude"}, function(response) {
-			if(response.data!="") include = response.data.split("\n");
+			if(response.data!=undefined && response.data!="") include = response.data.split("\n");
 			includeLoaded = true;
 		});
 	}
