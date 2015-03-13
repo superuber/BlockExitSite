@@ -1,10 +1,11 @@
 {
   "name": "Block Exit Site",
   "description": "Remove all links, mouseOvers, mouseClicks, rightClicks from all websites",
-  "version": "1.0",
+  "version": "1.1",
   "permissions": [
     "tabs", "<all_urls>"
   ],
+  "options_page": "options.html",
   "content_scripts": [
     {
       "matches": ["*://*/*"],
@@ -13,5 +14,9 @@
       "all_frames": true
     }
   ],
-  "manifest_version": 2
+  "manifest_version": 2,
+  "web_accessible_resources": [ "options.js" ],
+  "background": {
+    "scripts": [ "background.js" ]
+  }
 }

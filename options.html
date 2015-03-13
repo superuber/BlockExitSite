@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html id="t" i18n-values="dir:textdirection">
+<head>
+<meta charset="utf-8">
+<title i18n-content="optionsPageTitle">Block Exit Site Settings</title>
+<style>
+body.loaded {
+	opacity: 1;
+}
+#page {
+	-webkit-transition: all 0.55s ease-out;
+	-webkit-transform: scale(0.9) translate3d(-200px,0,0);
+	width: 900px;
+}
+body.loaded #page {
+	-webkit-transform:  translate3d(30px,0,0) perspective(800);
+}
+
+body {
+	font-family: 'Segoe UI', Tahoma, sans-serif;
+	color: #333;
+	margin: 30px;
+	background-color: #fefefe;
+	padding-bottom: 20px;
+	opacity: 0;
+	-webkit-transition: all 1.5s;
+}
+h1, h2 {
+	font-size: 30px;
+	margin: 0;
+	font-weight: normal;
+	letter-spacing: -1px;
+}
+h2 {
+	font-size: 20px;
+	margin-bottom: 10px;
+	color: #555;
+	margin-top: 30px;
+}
+textarea{
+	width: 400px;
+	height: 100px;
+}
+
+#options {
+	margin-top: 30px;
+	font-size: 14px;
+}
+#footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border-top: 1px solid #BBB;
+	padding: 10px 30px;
+	font-size: 13px;
+	color: #222;
+	background-color: rgba(255,255,255,0.8);
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.07);
+	z-index: 100;
+}
+#footer a {
+	color: #000;
+	-webkit-transition: all 0.4s;
+	text-decoration: none;	
+	border-bottom: 1px solid #fff;	
+}
+#footer a:hover {
+	border-bottom: 1px solid #333;	
+}
+#links {
+	position: fixed;
+	top: 35px;
+	bottom: 0;
+	right: 0;
+	z-index: 1;
+	padding-right: 100px;
+	box-shadow: 1px 10px 10px rgba(0,0,0,0.1);
+	padding-left: 25px;
+}
+#links a {
+	display: inline-block;
+	text-decoration: none;
+	-webkit-transition: all 0.4s;	
+	color: #888;
+	border-bottom: 1px solid #fff;
+	padding: 2px 5px;
+	margin: 5px 0;
+	font-size: 13px;
+}
+#links a:hover {
+	border-bottom: 1px solid #333;
+	color: #333;
+}
+#changeEffect {
+	-webkit-transition: all 0.4s;
+	font-size: 1px;
+	opacity: 0;
+}
+#changeEffect.show {
+	opacity: 1;
+	font-size: 14px;
+}
+</style>
+<script src="options.js"></script>
+</head>
+<body>
+<div id="page">
+	<div id="navigation">
+		<h1>Block Site Exit</h1>
+		<div id="changeEffect">Settings have been saved. Note: Your changes will take effect when you reload page</div>
+	</div>
+	<div id="options">
+		<h2>Exclude sites containing this in URL</h2>
+		<textarea id="exclude"></textarea><br/>
+		Leave it blank to consider all. The conditions are separeted by lines.
+		<h2>Include sites containing this in URL</h2>
+		<textarea id="include"></textarea><br/>
+		Leave it blank to consider all. The conditions are separeted by lines.
+	</div>
+</div>
+<div id="links">
+	<h2 style="margin-top: 60px;">Links</h2>
+	<a target="_blank" href="http://www.superuber.com">SuperUber</a><br />
+	<a target="_blank" href="https://github.com/superuber/BlockExitSite">OpenSource Link</a><br />
+	<h2 style="margin-top: 40px">Credits</h2>
+	<a target="_blank" href="#">Harrison Mendonça</a><br />
+	<a target="_blank" href="#">Carlos Oliveira</a><br />
+</div>
+<div id="footer">
+	Developed by <a target="_blank" href="http://www.superuber.com">SuperUber</a> in 2015
+</div>
+</body>
+</html>
